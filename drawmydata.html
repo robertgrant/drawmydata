@@ -1,5 +1,12 @@
-<!--  -->
-<!-- hat-tips: http://bl.ocks.org/gka/17ee676dc59aa752b4e6 -->
+<!-- Hello, source code reader. Join me and contribute at https://github.com/robertgrant/drawmydata  -->
+
+<!--
+I tip my hat to http://bl.ocks.org/gka/17ee676dc59aa752b4e6
+and vis4.net/blog/posts/making-html-tables-in-d3-doesnt-need-to-be-a-pain/
+and I smashed these bits of StackOverflow together till they worked:
+stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +21,7 @@
 
 	<style>
 		body {
-			font-family: 'helvetica';
+  		font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
 			padding: 15px;
 		}
 		path {
@@ -74,7 +81,6 @@
 <button type="button" class="btn btn-primary" onclick="saveit()">Save data</button>
 &nbsp; filename: <input id='fname' type="text" value="mydata.csv">
 <!-- button & boxes to add 1 point for mean x/y, add ?4 points for means and SDs/corr -->
-<!-- ADD TEXT BOXES FOR X AND Y RANGES AND NAMES -->
 <br>
 
 <h2>Data table</h2>
@@ -83,6 +89,12 @@
 		<tr><th>xname</th><th>yname</th></tr>
 	</table>
 </div>
+
+<p>"<em>Indispensible</em>" &mdash; Nathan Yau<br>
+	"<em>Fantastic</em>" &mdash; Alberto Cairo<br>
+	"<em>the Swiss Army Knife for undergrad statistics classes"</em>" &mdash; Michael Anderson<br>
+	"<em>Observational epidemiologists! Social psychologists! Cut out the middle man, don't bother collecting data, use this</em>" &mdash; Ben Goldacre</p>
+
 
 <script type='text/javascript'>
 
@@ -193,7 +205,6 @@
 					.text(yname);
 
 			// update the table
-			// HT vis4.net/blog/posts/making-html-tables-in-d3-doesnt-need-to-be-a-pain/
 			d3.select('#datatable').remove();
 			// column definitions
     	var columns = [
@@ -269,7 +280,6 @@
 			});
 
 // save the .csv file
-// HT stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
  var saveit=function() {
 	 	fnm = document.getElementById('fname').value;
 
